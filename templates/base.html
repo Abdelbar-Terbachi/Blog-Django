@@ -14,8 +14,16 @@
         <a href="{%url 'new_post'%}">Add New Post</a>
         {%block option %} {%endblock option %}
     </header>
+    {% if user.is_authenticated %}
+    <p>Hi {{user.username}}</p>
+    <a href="{% url 'logout'%}">Logout</a>
+    {% else %}
+    <p>Youre not logged in.</p>
+    <a href="{% url 'login'%}">Log In</a>
+    <a href="{% url 'signup'%}">Sign Up</a>
+    {% endif %}
     {%block body %}
-    
+
     {% endblock body%}
 </body>
 </html>

@@ -1,0 +1,20 @@
+{%extends 'base.html'%}
+
+{% block title%} Home Page {%endblock title%}
+
+{%block body%}
+<h1>Blogie Moogie</h1>
+
+<div class="blog-container">
+    
+        {%for blog in blogs_list%}
+        <div class="blog-item">
+            <h2>{{blog.title}}</h2>
+            <p>{{blog.body}}</p>
+            <p>{{blog.author}}</p>
+            <a  href="{% url 'post_detail' blog.pk %}">More Detail</a>
+        </div>
+        {%endfor%}
+    
+</div>
+{%endblock body%}

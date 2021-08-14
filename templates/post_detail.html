@@ -1,6 +1,10 @@
 {% extends 'base.html'%}
 {% block title %} details{%endblock title%}
 {%block body %}
+{%block option%}
+<a href="{% url 'post_edit' blog.pk %}">Edit</a>
+{%endblock option%}
+
 <h2>{{blog.title}}</h2>
 <p>{{blog.body}}</p>
 {%endblock body%}
